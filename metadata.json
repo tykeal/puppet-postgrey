@@ -1,0 +1,35 @@
+{
+  "name": "tykeal-postgrey",
+  "version": "0.1.0",
+  "author": "Andrew Grimberg",
+  "summary": "Installs and configures postgrey",
+  "license": "Apache-2.0",
+  "source": "https://gitlab.com/tykeal/puppet-postgrey",
+  "issues_url": "https://gitlab.com/tykeal/puppet-postgrey/-/issues",
+  "dependencies": [
+
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "8"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.10.0 < 7.0.0"
+    }
+  ],
+  "pdk-version": "1.18.0",
+  "template-url": "pdk-default#1.18.0",
+  "template-ref": "tags/1.18.0-0-g095317c"
+}

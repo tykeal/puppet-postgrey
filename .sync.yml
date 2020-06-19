@@ -1,0 +1,10 @@
+---
+# Delete CI system configs we aren't going to use
+appveyor.yml:
+  delete: true
+.travis.yml:
+  delete: true
+
+# Spec config
+spec/spec_helper.rb:
+  mock_with: ':rspec'
