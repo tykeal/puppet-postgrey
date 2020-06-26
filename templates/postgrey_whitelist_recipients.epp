@@ -1,0 +1,5 @@
+<%- | Array[Pattern[/\S+@/]] $whitelist
+| -%>
+<% $whitelist.each |$line| { -%>
+<%= $line %>
+<% } -%>

@@ -7,4 +7,6 @@ appveyor.yml:
 
 # Spec config
 spec/spec_helper.rb:
+  coverage_report: true
+  hiera_config: hiera.yaml
   mock_with: ':rspec'

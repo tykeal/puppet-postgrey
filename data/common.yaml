@@ -1,1 +1,22 @@
---- {}
+---
+postgrey::config::exim: false
+postgrey::config::delay: 300
+postgrey::config::group: postgrey
+postgrey::config::lookup_by_host: false
+postgrey::config::lookup_by_subnet: false
+postgrey::config::pidfile: /var/run/postgrey.pid
+postgrey::config::privacy: true
+postgrey::config::quiet: true
+postgrey::config::type:
+  unix:
+    socket: /var/spool/postfix/postgrey/socket
+postgrey::config::user: postgrey
+
+postgrey::config::whitelist: []
+postgrey::config::whitelist_recipients: []
+
+postgrey::install::manage_package: true
+postgrey::install::ensure: present
+
+postgrey::service::ensure: running
+postgrey::service::enable: true
