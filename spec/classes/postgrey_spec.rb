@@ -8,6 +8,10 @@ describe 'postgrey' do
       let(:facts) { os_facts }
 
       it { is_expected.to compile }
+      it { is_expected.to contain_class('postgrey::install') }
+      it { is_expected.to contain_package('postgrey') }
+      it { is_expected.to contain_class('postgrey::config') }
+      it { is_expected.to contain_class('postgrey::service') }
     end
   end
 end

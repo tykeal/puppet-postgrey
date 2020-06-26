@@ -1,0 +1,56 @@
+<%- |
+  # Booleans
+  Struct[{
+    exim             => Boolean,
+    lookup-by-host   => Boolean,
+    lookup-by-subnet => Boolean,
+    privacy          => Boolean,
+    quiet            => Boolean,
+  }] $bools,
+
+  # Required
+  Integer[0] $delay,
+  String[1] $group,
+  Stdlib::AbsolutePath $pidfile,
+  Struct[{
+      inet => Optional[Struct[{
+                port => Stdlib::Port,
+                host => Optional[Stdlib::Host],
+              }]],
+      unix => Optional[Struct[{
+                socket  => Stdlib::AbsolutePath,
+                mode    => Optional[Stdlib::Filemode],
+              }]],
+  }] $type,
+  String[1] $user,
+  Array[Stdlib::Host] $whitelist,
+  Array[Pattern[/\S+@/]] $whitelist_recipients,
+
+  # Optional
+  Struct[{
+    auto-whitelist-clients => Optional[Integer[0]],
+    greylist-action        => Optional[String[1]],
+    hostname               => Optional[Stdlib::Fqdn],
+    ipv4cidr               => Optional[Integer[0,32]],
+    ipv6cidr               => Optional[Integer[4,128]],
+    listen-queue-size      => Optional[Integer[1]],
+    max-age                => Optional[Integer[1]],
+    retry-window           => Optional[Variant[Integer[1],Regexp[/\d+h/]]],
+    syslog-facility        => Optional[String[1]],
+    x-greylist-header      => Optional[String[1]],
+  }] $options,
+| -%>
+# DO NOT EDIT: File managed by puppet
+POSTGREY_USER="--user=<%= $user -%>"
+POSTGREY_GROUP="--group=<%= $group -%>"
+POSTGREY_DELAY="--delay=<%= $delay -%>"
+POSTGREY_PID="--pidfile=<%= $pidfile -%>"
+POSTGREY_TYPE="<% if 'unix' in keys($type) { -%><%
+    -%>--unix=<%= $type['unix']['socket'] -%><%
+    if 'mode' in keys($type['unix']) { -%><%
+    %> --mode=<%= $type['unix']['mode'] -%><%
+  } } else { -%><%
+    -%>--inet=<% if 'host' in $type['inet'] { -%><%=
+      $type['inet']['host'] -%>:<% } -%><%= $type['inet']['port'] %><% } -%>"
+POSTGREY_OPTS="<% keys($bools).each |$bool| { if $bools[$bool] { -%>--<%= $bool %> <% } } -%><%
+  keys($options).each |$opt| { if $options[$opt] { -%>--<%= $opt -%>=<%= $options[$opt] %> <% } } -%>"

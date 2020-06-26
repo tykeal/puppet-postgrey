@@ -1,0 +1,5 @@
+<%- | Array[Stdlib::Host] $whitelist
+| -%>
+<% $whitelist.each |$line| { -%>
+<%= $line %>
+<% } -%>
