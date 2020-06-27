@@ -2,10 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## Release 0.1.0
+## Release 1.0.0
 
 **Features**
 
-**Bugfixes**
+* Installs and configures postgrey via hiera configuration
 
-**Known Issues**
+* No configuration will get you the RedHat default configuration just with
+  puppet managing the configuration files

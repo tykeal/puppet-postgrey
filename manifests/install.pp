@@ -1,9 +1,15 @@
-# @summary A short summary of the purpose of this class
+# @summary Installs postgrey
 #
-# A description of what this class does
+# Installs postgrey using the available package
 #
-# @example
-#   include postgrey::install
+# @param manage_package
+#   If true, will ensure the postgrey package (default: true)
+# @param ensure
+#   If true, will ensure the package as stated (default: present)
+#   NOTE: the default makes sure it is installed, but will not upgrade unless
+#   changed to latest!
+# @param package_name
+#   The name of the package to install (default: postgrey)
 class postgrey::install (
   Boolean $manage_package,
   String $ensure,
