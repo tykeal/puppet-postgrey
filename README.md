@@ -14,7 +14,7 @@
 ## Description
 
 [![Build
-Status](https://gitlab.com/%{project_path}/badges/%{default_branch}/pipeline.svg)](https://gitlab.com/%{project_path}/%{default_branch})
+Status](https://gitlab.com/tykeal/puppet-postgrey/badges/main/pipeline.svg)](https://gitlab.com/tykeal/puppet-postgrey/-/tree/main)
 
 This module installs and configures postgrey on a system. By default it sets it
 up almost exactly like the default configuration. The only difference is that
