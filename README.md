@@ -1,9 +1,5 @@
 # postgrey
 
-Welcome to your new module. A short overview of the generated parts can be found in the PDK documentation at https://puppet.com/docs/pdk/latest/pdk_generating_modules.html .
-
-The README template below provides a starting point with details about what information to include in your README.
-
 #### Table of Contents
 
 1. [Description](#description)
@@ -17,71 +13,53 @@ The README template below provides a starting point with details about what info
 
 ## Description
 
-Briefly tell users why they might want to use your module. Explain what your module does and what kind of problems users can solve with it.
+[![Build
+Status](https://gitlab.com/%{project_path}/badges/%{default_branch}/pipeline.svg)](https://gitlab.com/%{project_path}/%{default_branch})
 
-This should be a fairly short description helps the user decide if your module is what they want.
+This module installs and configures postgrey on a system. By default it sets it
+up almost exactly like the default configuration. The only difference is that
+quiet and privacy options are enabled.
 
 ## Setup
 
-### What postgrey affects **OPTIONAL**
+### What postgrey affects
 
-If it's obvious what your module touches, you can skip this section. For example, folks can probably figure out that your mysql_instance module affects their MySQL instances.
+### Setup Requirements
 
-If there's more that they should know about, though, this is the place to mention:
-
-* Files, packages, services, or operations that the module will alter, impact, or execute.
-* Dependencies that your module automatically installs.
-* Warnings or other important notices.
-
-### Setup Requirements **OPTIONAL**
-
-If your module requires anything extra before setting up (pluginsync enabled, another module, etc.), mention it here.
-
-If your most recent release breaks compatibility or requires particular steps for upgrading, you might want to include an additional "Upgrading" section here.
+* `puppetlabs/stdlib` is required for this module to work
 
 ### Beginning with postgrey
 
-The very basic steps needed for a user to get the module up and running. This can include setup steps, if necessary, or it can be an example of the most basic use of the module.
+This module is designed to "just work" Configuration is done against the
+following hiera locations:
+
+* `postgrey::install`
+* `postgrey::config`
+* `postgrey::service`
 
 ## Usage
 
-Include usage examples for common use cases in the **Usage** section. Show your users how to use your module to solve problems, and be sure to include code examples. Include three to five examples of the most important or common tasks a user can accomplish with your module. Show users how to accomplish more complex tasks that involve different types, classes, and functions working in tandem.
+To use simply do the following:
 
-## Reference
-
-This section is deprecated. Instead, add reference information to your code as Puppet Strings comments, and then use Strings to generate a REFERENCE.md in your module. For details on how to add code comments and generate documentation with Strings, see the Puppet Strings [documentation](https://puppet.com/docs/puppet/latest/puppet_strings.html) and [style guide](https://puppet.com/docs/puppet/latest/puppet_strings_style.html)
-
-If you aren't ready to use Strings yet, manually create a REFERENCE.md in the root of your module directory and list out each of your module's classes, defined types, facts, functions, Puppet tasks, task plans, and resource types and providers, along with the parameters for each.
-
-For each element (class, defined type, function, and so on), list:
-
-  * The data type, if applicable.
-  * A description of what the element does.
-  * Valid values, if the data type doesn't make it obvious.
-  * Default value, if any.
-
-For example:
-
-```
-### `pet::cat`
-
-#### Parameters
-
-##### `meow`
-
-Enables vocalization in your cat. Valid options: 'string'.
-
-Default: 'medium-loud'.
+```puppet
+include ::postgrey
 ```
 
 ## Limitations
 
-In the Limitations section, list any incompatibilities, known issues, or other warnings.
+This module is presently only developed for RedHat and CentOS 8 systems. It may
+work on 7.
+
+Other distros are welcome to open Merge Requests.
 
 ## Development
 
-In the Development section, tell other users the ground rules for contributing to your project and how they should submit their work.
+Development for this module is happening at
+https://gitlab.com/tykeal/puppet-postgrey
 
-## Release Notes/Contributors/Etc. **Optional**
+To contribute please open a Merge Request
 
-If you aren't using changelog, put your release notes here (though you should consider using changelog). You can also add any additional sections you feel are necessary or important to include here. Please use the `## ` header.
+A [DCO](https://developercertificate.org/) line indicated by a Signed-off-by in
+the commit footer of _every_ commit of a patch series, not just your merge
+request is _required_. If any of the commits in the series do not contain this,
+the request will be rejected.

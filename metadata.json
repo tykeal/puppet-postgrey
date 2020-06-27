@@ -1,15 +1,16 @@
 {
   "name": "tykeal-postgrey",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Andrew Grimberg",
   "summary": "Installs and configures postgrey",
   "license": "Apache-2.0",
   "source": "https://gitlab.com/tykeal/puppet-postgrey",
+  "project_page": "https://gitlab.com/tykeal/puppet-postgrey",
   "issues_url": "https://gitlab.com/tykeal/puppet-postgrey/-/issues",
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
-      "version": ">=6.3.0 <7.0.0"
+      "version_requirement": ">= 6.3.0 < 7.0.0"
     }
   ],
   "operatingsystem_support": [
