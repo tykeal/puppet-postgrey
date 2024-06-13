@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 **Features**
 
-* Installs and configures postgrey via hiera configuration
+-   Installs and configures postgrey via hiera configuration
 
-* No configuration will get you the RedHat default configuration just with
-  puppet managing the configuration files
+-   No configuration will get you the RedHat default configuration just with
+    puppet managing the configuration files
