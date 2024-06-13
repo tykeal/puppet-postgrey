@@ -4,9 +4,9 @@
 
 1. [Description](#description)
 2. [Setup - The basics of getting started with postgrey](#setup)
-    * [What postgrey affects](#what-postgrey-affects)
-    * [Setup requirements](#setup-requirements)
-    * [Beginning with postgrey](#beginning-with-postgrey)
+    - [What postgrey affects](#what-postgrey-affects)
+    - [Setup requirements](#setup-requirements)
+    - [Beginning with postgrey](#beginning-with-postgrey)
 3. [Usage - Configuration options and additional functionality](#usage)
 4. [Limitations - OS compatibility, etc.](#limitations)
 5. [Development - Guide for contributing to the module](#development)
@@ -26,16 +26,16 @@ quiet and privacy options are enabled.
 
 ### Setup Requirements
 
-* `puppetlabs/stdlib` is required for this module to work
+-   `puppetlabs/stdlib` is required for this module to work
 
 ### Beginning with postgrey
 
 This module is designed to "just work" Configuration is done against the
 following hiera locations:
 
-* `postgrey::install`
-* `postgrey::config`
-* `postgrey::service`
+-   `postgrey::install`
+-   `postgrey::config`
+-   `postgrey::service`
 
 ## Usage
 
