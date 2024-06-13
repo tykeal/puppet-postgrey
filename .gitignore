@@ -16,7 +16,7 @@
 /log/
 /pkg/
 /spec/fixtures/manifests/
-/spec/fixtures/modules/
+/spec/fixtures/modules/*
 /tmp/
 /vendor/
 /convert_report.txt
@@ -25,5 +25,4 @@
 .project
 .envrc
 /inventory.yaml
-.ruby-gemset
-.ruby-version
+/spec/fixtures/litmus_inventory.yaml

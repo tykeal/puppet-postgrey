@@ -1,16 +1,16 @@
 {
   "name": "tykeal-postgrey",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Andrew Grimberg",
   "summary": "Installs and configures postgrey",
   "license": "Apache-2.0",
-  "source": "https://gitlab.com/tykeal/puppet-postgrey",
-  "project_page": "https://gitlab.com/tykeal/puppet-postgrey",
-  "issues_url": "https://gitlab.com/tykeal/puppet-postgrey/-/issues",
+  "source": "https://github.com/tykeal/puppet-postgrey",
+  "project_page": "https://github.com/tykeal/puppet-postgrey",
+  "issues_url": "https://github.com/tykeal/puppet-postgrey/issues",
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
-      "version_requirement": ">= 6.3.0 < 7.0.0"
+      "version_requirement": ">= 6.3.0 < 10.0.0"
     }
   ],
   "operatingsystem_support": [
@@ -26,10 +26,10 @@
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 4.10.0 < 7.0.0"
+      "version_requirement": ">= 4.10.0 < 9.0.0"
     }
   ],
-  "pdk-version": "1.18.0",
-  "template-url": "pdk-default#1.18.0",
-  "template-ref": "tags/1.18.0-0-g095317c"
+  "pdk-version": "3.2.0",
+  "template-url": "pdk-default#3.2.0",
+  "template-ref": "tags/3.2.0-0-gb257ef1"
 }

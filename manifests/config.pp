@@ -70,13 +70,13 @@ class postgrey::config (
   Boolean $quiet,
   Struct[{
       inet => Optional[Struct[{
-                port => Stdlib::Port,
-                host => Optional[Stdlib::Host],
-              }]],
+            port => Stdlib::Port,
+            host => Optional[Stdlib::Host],
+      }]],
       unix => Optional[Struct[{
-                socket  => Stdlib::AbsolutePath,
-                mode    => Optional[Stdlib::Filemode],
-              }]],
+            socket  => Stdlib::AbsolutePath,
+            mode    => Optional[Stdlib::Filemode],
+      }]],
   }] $type,
   String[1] $user,
   Array[Stdlib::Host] $whitelist,
@@ -102,7 +102,7 @@ class postgrey::config (
     content => epp("${module_name}/postgrey_whitelist_clients.local.epp",
       {
         'whitelist' => $whitelist,
-      })
+    }),
   }
 
   file { '/etc/postfix/postgrey_whitelist_recipients':
@@ -113,7 +113,7 @@ class postgrey::config (
     content => epp("${module_name}/postgrey_whitelist_recipients.epp",
       {
         'whitelist' => $whitelist_recipients,
-      })
+    }),
   }
 
   if ('unix' in keys($type) and 'inet' in keys($type)) {
@@ -124,7 +124,7 @@ class postgrey::config (
     fail("Must set either 'unix' or 'inet' for type")
   }
 
-  file {'/etc/sysconfig/postgrey':
+  file { '/etc/sysconfig/postgrey':
     ensure  => file,
     owner   => 'root',
     group   => 'root',
@@ -158,6 +158,6 @@ class postgrey::config (
           x-greylist-header      => $x_greylist_header,
         },
       }
-    )
+    ),
   }
 }

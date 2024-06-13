@@ -14,7 +14,7 @@
 ## Description
 
 [![Build
-Status](https://gitlab.com/tykeal/puppet-postgrey/badges/main/pipeline.svg)](https://gitlab.com/tykeal/puppet-postgrey/-/tree/main)
+Status](https://github.com/tykeal/puppet-postgrey/actions/workflows/verify.svg)](https://github.com/tykeal/puppet-postgrey)
 
 This module installs and configures postgrey on a system. By default it sets it
 up almost exactly like the default configuration. The only difference is that
