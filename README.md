@@ -26,16 +26,16 @@ quiet and privacy options are enabled.
 
 ### Setup Requirements
 
--   `puppetlabs/stdlib` is required for this module to work
+- `puppetlabs/stdlib` is required for this module to work
 
 ### Beginning with postgrey
 
 This module is designed to "just work" Configuration is done against the
 following hiera locations:
 
--   `postgrey::install`
--   `postgrey::config`
--   `postgrey::service`
+- `postgrey::install`
+- `postgrey::config`
+- `postgrey::service`
 
 ## Usage
 
