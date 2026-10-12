@@ -6,10 +6,10 @@
 
 **Classes**
 
--   [`postgrey`](#postgrey): Install and configure postgrey
--   [`postgrey::config`](#postgreyconfig): Configure postgrey
--   [`postgrey::install`](#postgreyinstall): Installs postgrey
--   [`postgrey::service`](#postgreyservice): Manages the postgrey service
+- [`postgrey`](#postgrey): Install and configure postgrey
+- [`postgrey::config`](#postgreyconfig): Configure postgrey
+- [`postgrey::install`](#postgreyinstall): Installs postgrey
+- [`postgrey::service`](#postgreyservice): Manages the postgrey service
 
 ## Classes
 
@@ -99,10 +99,10 @@ Data type: `Struct[{
 
 Enables either inet or unix listening type
 
--   inet requires a port defined and an optional host
--   unix requires a socket path (default: /var/spool/postfix/postgrey/socket)
-    and an optional socket mode
--   Only listening option may be set, the default is to use 'unix'
+- inet requires a port defined and an optional host
+- unix requires a socket path (default: /var/spool/postfix/postgrey/socket)
+  and an optional socket mode
+- Only listening option may be set, the default is to use 'unix'
 
 ##### `user`
 
